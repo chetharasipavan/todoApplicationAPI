@@ -1,0 +1,117 @@
+// API 1 //
+
+-------- all todos---------
+GET http://localhost:3000/todos/?status=TO%20DO
+
+----------all todos whose priority is 'HIGH'------
+
+GET http://localhost:3000/todos/?priority=HIGH
+
+
+
+-----priority is 'HIGH' and status is 'IN PROGRESS-----
+
+GET http://localhost:3000/todos/?priority=HIGH&status=IN%20PROGRESS
+
+
+
+--------todo contains 'Buy' text------
+
+GET http://localhost:3000/todos/?search_q=Buy
+
+
+-----category is 'WORK' and status is 'DONE'------
+
+GET http://localhost:3000/todos/?category=WORK&status=DONE
+
+
+
+---------category is 'HOME'-----------------
+
+GET http://localhost:3000/todos/?category=HOME
+
+
+
+--------------whose category is 'LEARNING' and priority is 'HIGH'----
+
+GET http://localhost:3000/todos/?category=LEARNING&priority=HIGH
+
+
+
+// API 2 //
+
+GET http://localhost:3000/todos/8
+
+
+
+// API 3 //
+
+GET http://localhost:3000/agenda/?date=2021-02-22
+
+
+// API 4 //
+
+POST http://localhost:3000/todos/
+Content-Type:application/json
+
+{
+  "id": 8,
+  "todo": "Finalize event",
+  "priority": "LOW",
+  "status": "TO DO",
+  "category": "HOME",
+  "dueDate": "2021-02-22"
+}
+
+// API 5 //
+
+----------- status Updated------------
+
+PUT http://localhost:3000/todos/3
+Content-Type: application/json 
+
+{
+  "status": "DONE"
+}
+
+------------Priority Updated----------
+
+PUT http://localhost:3000/todos/5
+Content-Type: application/json 
+
+{
+  "priority": "HIGH"
+}
+
+------------Todo Updated--------------
+
+PUT http://localhost:3000/todos/3
+Content-Type: application/json 
+
+{
+  "todo": "Clean the garden"
+}
+
+-------------Category Updated---------
+
+PUT http://localhost:3000/todos/3
+Content-Type: application/json 
+
+{
+  "category": "WORK"
+}
+
+-------------Due Date Updated---------
+
+PUT http://localhost:3000/todos/3
+Content-Type: application/json 
+
+{
+    "dueDate": "2021-01-12"
+}
+
+
+
+// API 6 //
+
+DELETE http://localhost:3000/todos/6
