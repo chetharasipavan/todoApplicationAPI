@@ -55,12 +55,12 @@ POST http://localhost:3000/todos/
 Content-Type:application/json
 
 {
-  "id": 8,
+  "id": 9,
   "todo": "Finalize event",
   "priority": "LOW",
   "status": "TO DO",
   "category": "HOME",
-  "dueDate": "2021-02-22"
+  "dueDate": "2021-03-11"
 }
 
 // API 5 //

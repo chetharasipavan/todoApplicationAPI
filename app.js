@@ -314,9 +314,11 @@ app.post('/todos/', async (request, response) => {
       return response.status(400).send('Invalid Due Date')
     }
 
+    const formattedDueDate = format(new Date(dueDate), 'yyyy-MM-dd')
+
     const insertTodoQuery = `
       INSERT INTO todo (id,todo, priority, status, category, due_date)
-      VALUES ('${id}', '${todo}','${priority}','${status}', '${category}', '${dueDate}');
+      VALUES ('${id}', '${todo}','${priority}','${status}', '${category}', '${formattedDueDate}');
     `
 
     await database.run(insertTodoQuery)
